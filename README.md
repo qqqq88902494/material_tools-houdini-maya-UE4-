@@ -1,6 +1,9 @@
 # maya_material_convert_tools
 difference material convert~like arnold blin redshift~~
 
+how to use?:
+![image](https://github.com/qqqq88902494/maya_material_convert_tools/blob/master/GIF.gif )  
+
 tips:
 #by vfxmstc 
 #email:410386656@qq.com
