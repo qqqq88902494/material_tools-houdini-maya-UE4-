@@ -6,7 +6,7 @@ how to use?:
 
 <br>tips:<br>
 <br>by vfxmstc<br> 
-email:410386656@qq.com
+email:410386656@qq.com<br>
 maya2020
 tools_version:v01
 support:arnold to blin
