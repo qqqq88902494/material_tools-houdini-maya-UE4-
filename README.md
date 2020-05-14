@@ -4,8 +4,8 @@ difference material convert~like arnold blin redshift~~
 how to use?:
 ![image](https://github.com/qqqq88902494/maya_material_convert_tools/blob/master/GIF.gif )  
 
-tips:
-by vfxmstc 
+<br>tips:<br>
+<br>by vfxmstc<br> 
 email:410386656@qq.com
 maya2020
 tools_version:v01
