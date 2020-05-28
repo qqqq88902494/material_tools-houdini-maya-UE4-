@@ -1,7 +1,7 @@
 import maya.cmds as cmds
 import os
 cmds.select(hi=True)
-selObjList = cmds.ls(sl=True,type = 'lambert')
+selObjList = cmds.ls(sl=True,type = 'phong')
 material_name = []
 final_txt = ''
 txtpath = 'C:/temp/txt/'
