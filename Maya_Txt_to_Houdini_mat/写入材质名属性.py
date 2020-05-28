@@ -3,10 +3,10 @@ cmds.select(hi=True)
 selObjList = cmds.ls(sl=True, shapes=True)
 for selObj in selObjList:
     shaderEngine1 = cmds.listConnections(selObj, type='shadingEngine')
-    shaderEngine = cmds.listConnections(shaderEngine1, type='lambert')
+    shaderEngine = cmds.listConnections(shaderEngine1, type='phong')
     objShader = ''
     selObjpath = selObj + '.shop_materialpath'
-    if len(shaderEngine) == 1:
-        objShader = '/mat/'+shaderEngine[0]
-        cmds.addAttr(selObj, shortName='asn', longName='shop_materialpath', dataType='string')
-        cmds.setAttr(selObjpath,objShader,type='string')
+    shaderEngine = shaderEngine[0]
+    objShader = '/mat/'+shaderEngine
+    cmds.addAttr(selObj, shortName='asn', longName='shop_materialpath', dataType='string')
+    cmds.setAttr(selObjpath,objShader,type='string')
