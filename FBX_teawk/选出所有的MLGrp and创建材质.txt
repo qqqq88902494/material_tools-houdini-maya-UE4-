@@ -1,0 +1,23 @@
+import hou  
+nodelist = hou.node('/obj/fbx_fbx').children()   
+for node1 in nodelist:
+    if('MLGrp' in node1.name()):
+        for node2 in node1.outputConnections():
+            node = node2.outputNode()
+            node.setPosition((100,1000))
+            subnodelist = node.children()
+            if(len(subnodelist) !=0):
+                material_node = node.createNode('material')
+                mat_path = node.parm('shop_materialpath').eval()
+                for dissubnode in subnodelist:
+                    if(dissubnode.isDisplayFlagSet() == 1):
+                        try:
+                            material_node.setInput(0,dissubnode)
+                            material_node.setDisplayFlag(True)
+                            material_node.setRenderFlag(True)
+                            material_node.parm('shop_materialpath1').set('../'+mat_path)
+                        except:
+                            pass
+                            
+                            
+hou.node('/obj/fbx_fbx/materials').setPosition((100,1005))

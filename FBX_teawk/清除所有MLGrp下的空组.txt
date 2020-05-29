@@ -1,0 +1,12 @@
+import hou  
+nodelist = hou.node('/obj/fbx_fbx').children()
+for node in nodelist:
+    if('MLGrp' in node.name()):
+        for outconnec in node.outputConnections():
+            subnode = outconnec.outputNode()
+            subnodelist = subnode.children()
+            if(len(subnodelist) ==0):
+                try:
+                    subnode.destroy()
+                except:
+                    pass
