@@ -1,0 +1,12 @@
+import maya.cmds as cmds
+sel = cmds.ls(sl=True,fl=True)
+facelist = []
+for obj in sel:
+    shapeNode = cmds.listRelatives(obj,children=True,shapes=True)
+    SGNodeList = cmds.listConnections(shapeNode[0],type="shadingEngine")
+    SGNodeList = list(set(SGNodeList))
+    for SGNode in SGNodeList:
+        cmds.select( obj, r=True )
+        cmds.ConvertSelectionToFaces()
+        cmds.sets(forceElement='initialShadingGroup', e=1)
+        cmds.sets(forceElement=SGNode, e=1)

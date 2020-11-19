@@ -1,0 +1,11 @@
+import maya.cmds as cmds
+cmds.select(hi=True)
+selObjList = cmds.ls(sl=True, shapes=True)
+for selObj in selObjList:
+    shaderEngine = cmds.listConnections(selObj, type='shadingEngine')
+    shader = cmds.listConnections(shaderEngine[0] + ".surfaceShader")
+    objShader = ''
+    selObjpath = selObj + '.abcShaderName'
+    objShader = shader[0]
+    cmds.addAttr(selObj, shortName='asn', longName='abcShaderName', dataType='string')
+    cmds.setAttr(selObjpath,objShader,type='string')

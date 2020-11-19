@@ -1,0 +1,11 @@
+import maya.cmds as cmds
+import os
+path  = r'C:\Unreal_project\Lighting_HDR\Content\Udim\test'
+num = 1
+for file in os.listdir(path):
+    a = file.split("_")
+    b = a[0]+"_"+a[1]+"_"+a[3][:-4]+"."+a[2]+".png"
+    file2 = os.path.join(path,b)
+    os.rename(os.path.join(path,file),file2)
+    #num = num + 1
+    #print file2
